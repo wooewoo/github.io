@@ -1,0 +1,1055 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width" , initial-scale="1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        header .container1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1090px;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+        }
+
+        .headA {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+            background-color: #6087BA;
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            width: 1090px;
+            
+            /*
+         margin-left: auto;
+         margin-right: auto;
+         
+*/
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+
+        .menuA ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menuA a {
+
+            padding: 15px;
+            color: inherit;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .menuA a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .searchA {
+            padding-top: 50px;
+            display: flex;
+            justify-content: center;
+            width:
+        }
+
+
+        header {
+            font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+            margin: 0px;
+            /*            padding: 50px;*/
+            /*            background: #e1e1e1;*/
+        }
+
+        header>ul .a {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*            background-color: #333;*/
+        }
+
+        .a {
+            float: right;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .katagorie {
+            position: relative;
+            height: 44px;
+            background: #6087BA;
+            width: auto;
+            max-width: 1090px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .katagorie ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .katagorie>ul {
+            position: relative;
+            display: block;
+            background: #6087BA;
+            width: 100%;
+            z-index: 500;
+        }
+
+        .katagorie:after,
+        .katagorie>ul:after {
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+
+        .katagorie.align-right>ul>li {
+            float: right;
+        }
+
+        .katagorie.align-center ul {
+            text-align: center;
+        }
+
+        .katagorie.align-center ul ul {
+            text-align: left;
+        }
+
+        .katagorie>ul>li {
+            display: inline-block;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .katagorie>ul>#katagorie-button {
+            display: none;
+        }
+
+        .katagorie ul li a {
+            display: block;
+            font-family: Helvetica, sans-serif;
+            text-decoration: none;
+        }
+
+        .katagorie>ul>li>a {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 15px 20px;
+            color: #fff;
+            text-transform: uppercase;
+            -webkit-transition: color 0.25s ease-out;
+            -moz-transition: color 0.25s ease-out;
+            -ms-transition: color 0.25s ease-out;
+            -o-transition: color 0.25s ease-out;
+            transition: color 0.25s ease-out;
+        }
+
+        .katagorie>ul>li.sub>a {
+            padding-right: 32px;
+        }
+
+        .katagorie>ul>li:hover>a {
+            color: #ffffff;
+        }
+
+        .katagorie li.sub::after {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .katagorie>ul>li.sub::after {
+            right: 10px;
+            top: 20px;
+            border: 5px solid transparent;
+            border-top-color: #7a8189;
+        }
+
+        .katagorie>ul>li:hover::after {
+            border-top-color: #ffffff;
+        }
+
+        .katagorie ul ul {
+            position: absolute;
+            left: -9999px;
+            top: 70px;
+            opacity: 0;
+            -webkit-transition: opacity .3s ease, top .25s ease;
+            -moz-transition: opacity .3s ease, top .25s ease;
+            -ms-transition: opacity .3s ease, top .25s ease;
+            -o-transition: opacity .3s ease, top .25s ease;
+            transition: opacity .3s ease, top .25s ease;
+            z-index: 1000;
+        }
+
+        .katagorie ul ul ul {
+            top: 37px;
+            padding-left: 5px;
+        }
+
+        .katagorie ul ul li {
+            position: relative;
+        }
+
+        .katagorie>ul>li:hover>ul {
+            left: auto;
+            top: 44px;
+            opacity: 1;
+        }
+
+        .katagorie.align-right>ul>li:hover>ul {
+            left: auto;
+            right: 0;
+            opacity: 1;
+        }
+
+        .katagorie ul ul li:hover>ul {
+            left: 170px;
+            top: 0;
+            opacity: 1;
+        }
+
+        .katagorie.align-right ul ul li:hover>ul {
+            left: auto;
+            right: 170px;
+            top: 0;
+            opacity: 1;
+            padding-right: 5px;
+        }
+
+        .katagorie ul ul li a {
+            width: 130px;
+            border-bottom: 1px solid #eeeeee;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #9ea2a5;
+            background: #ffffff;
+            -webkit-transition: all .35s ease;
+            -moz-transition: all .35s ease;
+            -ms-transition: all .35s ease;
+            -o-transition: all .35s ease;
+            transition: all .35s ease;
+        }
+
+        .katagorie.align-right ul ul li a {
+            text-align: right;
+        }
+
+        .katagorie ul ul li:hover>a {
+            background: #f2f2f2;
+            color: #8c9195;
+        }
+
+        .katagorie ul ul li:last-child>a,
+        .katagorie ul ul li.last>a {
+            border-bottom: 0;
+        }
+
+        .katagorie>ul>li>ul::after {
+            content: '';
+            border: 6px solid transparent;
+            width: 0;
+            height: 0;
+            border-bottom-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            left: 30px;
+        }
+
+        .katagorie.align-right>ul>li>ul::after {
+            left: auto;
+            right: 30px;
+        }
+
+        .katagorie ul ul li.sub::after {
+            border: 4px solid transparent;
+            border-left-color: #9ea2a5;
+            right: 10px;
+            top: 12px;
+            -moz-transition: all .2s ease;
+            -ms-transition: all .2s ease;
+            -o-transition: all .2s ease;
+            transition: all .2s ease;
+            -webkit-transition: -webkit-transform 0.2s ease, right 0.2s ease;
+        }
+
+        .katagorie.align-right ul ul li.sub::after {
+            border-left-color: transparent;
+            border-right-color: #9ea2a5;
+            right: auto;
+            left: 10px;
+        }
+
+        .katagorie ul ul li.sub:hover::after {
+            border-left-color: #ffffff;
+            right: -5px;
+            -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .katagorie.align-right ul ul li.sub:hover::after {
+            border-right-color: #ffffff;
+            border-left-color: transparent;
+            left: -5px;
+            -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+
+        }
+
+        /*부트스트랩 유동성 비활성화*/
+        .container-fluid {
+            width: 900px;
+            max-width: none !important;
+            background-color: #6087BA;
+        }
+
+
+        .table {
+            max-width: none !important;
+            max-height: none !important;
+
+        }
+
+        body {
+            display: block;
+        }
+
+        #eventSection {
+            height: 243px;
+            color: #fff;
+            background-color: white;
+            width: 1090px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #mainSection {
+            /*            height: 1000px;*/
+            color: #6087BA;
+            background-color: white;
+        }
+
+        a {
+            display: inline;
+            color: white;
+            font-size: 20px;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        /*배너 이미지 크기*/
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 1090px;
+            margin: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .carousel-control {
+            width: 0;
+        }
+
+        .carousel-inner>.item>a>img,
+        .carousel-inner>.item>img,
+        .img-responsive,
+        .thumbnail a>img,
+        .thumbnail>img {
+            display: block;
+            max-width: none !important;
+            height: 240px;
+        }
+
+        .nav-tabs>li>a {
+            margin-right: 0px;
+        }
+
+        .recommend_book {
+            margin-left: -90px;
+            width: 1500px;
+            height: 400px;
+            background-color: white;
+        }
+
+        .recommend_book hr {
+            width: 800px;
+            margin-top: 35px;
+            margin-right: 130px;
+            border-top: 1px solid #787878;
+        }
+
+        .recommend_book button {
+            margin-top: -60px;
+            margin-left: 980px;
+        }
+
+        .main_content {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        #bestSeller1 {
+            width: 1090px;
+            height: 480px;
+            /*            float: left;*/
+            margin-left: -110px;
+        }
+
+        #bestSeller2 {
+            width: 1090px;
+            height: 480px;
+            /*            float: left;*/
+            margin-top: 20px;
+            margin-left: -110px;
+        }
+
+        #bestSeller3 {
+            width: 1090px;
+            height: 480px;
+            /*            float: left;*/
+            margin-top: 20px;
+            margin-left: -110px;
+        }
+
+        #bestSeller1 ul li a {
+            font-size: 14px;
+            color: #6087BA;
+        }
+
+        #bestSeller2 ul li a {
+            font-size: 14px;
+            color: #6087BA;
+        }
+
+        #bestSeller3 ul li a {
+            font-size: 14px;
+            color: #6087BA;
+        }
+
+        .bestSeller_right {
+            margin-top: -40px;
+            margin-left: 950px;
+        }
+
+        .bestSeller_right a {
+            font-size: 14px;
+            color: black;
+        }
+
+        .mod {
+            height: 60px;
+        }
+
+        #banner {
+            width: 1090px;
+
+            margin-top: 1px;
+            margin-left: -30px;
+            margin-right: auto;
+        }
+
+        .imgPos {
+            text-align: center;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+            color: black;
+            font-size: 20px;
+        }
+
+        .imgPos2 {
+            padding-bottom: -20px;
+            text-align: center;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+            color: black;
+            font-size: 25px;
+        }
+
+        #bookPlusInfo {
+            margin-left: 60px;
+            width: 950px;
+            margin-top: -30px;
+        }
+
+        #bookPlusInfo table {
+            border: 0px solid white;
+        }
+
+        #bestPlusInfoList {
+            width: 950px;
+            height: 10px;
+        }
+
+        dl {
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+            color: black;
+        }
+
+        dt {
+            text-align: center;
+        }
+
+        dd {
+            color: #747474;
+            text-align: center;
+        }
+
+        #widthDl {
+            width: 200px;
+        }
+
+        #heightTr {
+            height: 20px;
+        }
+
+        .btn-danger {
+            color: #fff;
+            background-color: #6087BA;
+            border-color: #6087BA;
+        }
+
+        .btn-danger:hover {
+            color: #FFB2F5;
+            background-color: #6087BA;
+            border-color: #6087BA;
+        }
+
+        .form-group input[type=text] {
+            border-top-left-radius: .5em;
+            /*왼쪽 상단 코너를 부드럽게 */
+            border-bottom-left-radius: .5em;
+            /*왼쪽 하단 코너를 부드럽게*/
+            border-top-right-radius: .5em;
+            /*오른족 상단 코너를 부드럽게*/
+            border-bottom-right-radius: .5em;
+            /*오른쪽 하단 코너를 부드럽게*/
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            height: 27px;
+        }
+
+        hr {
+            border-top: 1px solid #ddd;
+            width: 200px;
+        }
+
+        .imgpo {
+            width: 120px;
+            height: 160px;
+            margin-right: 70px;
+        }
+
+        .name {
+            margin-top: 10px;
+            margin-left: 0px;
+            font-weight: bold;
+            color: #5D5D5D;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+            text-overflow: ellipsis;
+        }
+
+        .writer {
+            margin-top: -5px;
+            margin-left: 0px;
+            color: #666;
+            font-size: 13px;
+            text-overflow: ellipsis;
+        }
+
+        #grade {
+            width: 70px;
+            height: 15px;
+            margin-top: -13px;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+            color: red;
+        }
+
+        .topBook {
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .3));
+            font-size: 20px;
+        }
+
+
+        footer {
+            color: #fff;
+            background-color: #6087BA;
+            display: block;
+        }
+
+        footer .container1 {
+            padding: 40px 20px;
+        }
+
+        .footA {
+            margin-bottom: 30px;
+        }
+
+        .footA h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 30px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .footC {
+            text-align: center;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footD {
+            margin-top: 20px;
+        }
+
+        .footD ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .footD a {
+            margin-right: 8px;
+            display: block;
+            padding: 0;
+            color: inherit;
+            font-size: 16px;
+            text-decoration: none;
+            border: 1px solid currentColor;
+            width: 1.7em;
+            line-height: 1.7em;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .footA {
+            flex: 0 0 100%
+        }
+
+        .footA {
+            flex: 0 0 100%
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <header class="container1">
+        <div class="headA">
+            <div style="float: left;">
+                <a class="Logo" href="./indexEx.html"><img style="margin-left: -15px; width: 200px; height: 82px;" src="../images/logo.jpg" alt=""></a>
+            </div>
+            <div class="menuA" style="float: right">
+                <a href="./indexEx.html">메인</a>
+                <a href="./login.html">로그인</a>
+                <a href="./Sighup.html">회원가입</a>
+            </div>
+            <div class="searchA">
+                <div style="vertical-align: bottom" class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input style="width: 500px; height: 30px " type="search" id="search" placeholder="" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <ul>
+                <div class="katagorie" style="text-align: left;">
+                    <ul>
+                        <li class='active sub'>
+                            <a href='#'>카테고리</a>
+                            <ul>
+                                <li class='sub'>
+                                    <a href='#'>소설</a>
+                                    <ul>
+                                        <li>
+                                            <a href='#'>일반 소설</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>추리 소설</a>
+                                        </li>
+
+                                        <li>
+                                            <a href='#'>SF 소설</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>판타지 소설</a>
+                                        </li>
+
+                                        <li class='last'>
+                                            <a href='#'>역사</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class='sub'>
+                                    <a href='#'>에세이/시</a>
+                                    <ul>
+                                        <li>
+                                            <a href='#'>에세이</a>
+                                        </li>
+                                        <li class='last'>
+                                            <a href='#'>시</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class='sub'>
+                                    <a href='#'>인문</a>
+                                    <ul>
+                                        <li>
+                                            <a href='#'>정치/사회</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>예술/문화</a>
+                                        </li>
+                                        <li class='last'>
+                                            <a href='#'>역사</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <li class='sub'>
+                                    <a href='#'>경제일반</a>
+                                    <ul>
+                                        <li>
+                                            <a href='#'>경영일반</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>마케팅</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>금융/재테크</a>
+                                        </li>
+                                        <li class='last'>
+                                            <a href='#'>리더쉽</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class='sub'>
+                                    <a href='#'>자기계발</a>
+                                    <ul>
+                                        <li>
+                                            <a href='#'>외국어</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>진학/진로</a>
+                                        </li>
+                                        <li class='last'>
+                                            <a href='#'>과학</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+
+
+
+                                <li class='sub'>
+                                    <a href='#'>It 비지니스</a>
+                                    <ul>
+                                        <li>
+                                            <a href='#'>개발/프로그램</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>컴퓨터/앱</a>
+                                        </li>
+                                        <li class='last'>
+                                            <a href='#'>수험서</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="a"><a href="#">신간</a></li>
+                        <li class="a"><a href="#">베스트</a></li>
+                        <li class="a"><a href="#">스테디</a></li>
+                    </ul>
+
+                </div>
+
+            </ul>
+        </div>
+
+
+    </header>
+    <div id="eventSection" class="container-fluid">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" id="banner">
+                    <div class="item active">
+                        <img src="../images/banner0.jpg" alt="a" width="1090px" height="500">
+                    </div>
+                    <div class="item">
+                        <img src="../images/banner1.jpg" alt="b" width="1090px" height="500">
+                    </div>
+                    <div class="item">
+                        <img src="../images/banner2.jpg" alt="c" width="1090px" height="500">
+                    </div>
+                    <div class="item">
+                        <img src="../images/banner3.jpg" alt="d" width="460" height="345">
+                    </div>
+                    <div class="item">
+                        <img src="../images/banner4.jpg" alt="e" width="460" height="345">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mainSection" class="container-fluid">
+        <br>
+        <div class="main_content" id="bestSeller1">
+            <div class="header">
+                <h4 class="title">신간 도서</h4>
+                <button class="btn btn-default bestSeller_right"><a href="category/newbook_list.html" target="content">전체보기</a></button>
+            </div>
+            <div class="body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#bestMon1" data-toggle="tab">신간도서</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="bestMon1">
+                        <br><br>
+                        <div id="bookPlusInfo"><br>
+                            <ul class="nav navbar-nav" id="bestseller" style="display: flex;">
+                                <li>
+                                    <a href="./bookDetail.html"><p class="topBook">Top 1</p><img src="../images/book1.jpg" class="imgpo">
+                                    <p class="name">언어의 온도</p>
+                                    <p class="writer">이기주</p>
+                                    <p id="grade">★★★★☆</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 2</p><img src="../images/book2.jpg" class="imgpo">
+                                    <p class="name">자존감 수업</p>
+                                    <p class="writer">윤홍균</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 3</p><img src="../images/book3.jpg" class="imgpo">
+                                    <p class="name">국가란 무엇인가</p>
+                                    <p class="writer">유시민</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 4</p><img src="../images/book4.jpg" class="imgpo">
+                                    <p class="name">공터에서</p>
+                                    <p class="writer">김훈</p>
+                                    <p id="grade">★★★★☆</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 5</p><img src="../images/book5.jpg" class="imgpo">
+                                    <p class="name">기린의 날개</p>
+                                    <p class="writer">히가시노 게이고</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="main_content" id="bestSeller2">
+            <div class="header">
+                <h4 class="title">베스트셀러</h4>
+                <button class="btn btn-default bestSeller_right"><a href="category/bestseller_list.html" target="content">전체보기</a></button>
+            </div>
+            <div class="body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#bestMon2" data-toggle="tab">월간</a></li>
+                    <li><a href="#bestWeek2" data-toggle="tab">주간</a></li>
+                    <li><a href="#bestDay2" data-toggle="tab">일간</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="bestMon2">
+                        <br>
+                        <br>
+                        <div id="bookPlusInfo"><br>
+                            <ul class="nav navbar-nav" id="bestseller" style="display: flex;">
+                                <li>
+			 <p class="topBook">Top 1</p><a href="./bookDetail.html"><img src="../images/book1.jpg" class="imgpo">
+                                    <p class="name">언어의 온도</p>
+                                    <p class="writer">이기주</p>
+                                    <p id="grade">★★★★☆</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 2</p><img src="../images/book2.jpg" class="imgpo">
+                                    <p class="name">자존감 수업</p>
+                                    <p class="writer">윤홍균</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 3</p><img src="../images/book3.jpg" class="imgpo">
+                                    <p class="name">국가란 무엇인가</p>
+                                    <p class="writer">유시민</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 4</p><img src="../images/book4.jpg" class="imgpo">
+                                    <p class="name">공터에서</p>
+                                    <p class="writer">김훈</p>
+                                    <p id="grade">★★★★☆</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 5</p><img src="../images/book5.jpg" class="imgpo">
+                                    <p class="name">기린의 날개</p>
+                                    <p class="writer">히가시노 게이고</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="bestWeek2">
+                        <p>안녕, 나는 부분 2에 있어.</p>
+                    </div>
+                    <div class="tab-pane" id="bestDay2">
+                        <p>안녕, 나는 부분 2에 있어.</p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="main_content" id="bestSeller3">
+            <div class="mod">
+                <h4 class="title">스테디셀러</h4>
+                <button class="btn btn-default bestSeller_right"><a href="category/steadyseller_list.html" target="content">전체보기</a></button>
+            </div>
+            <div class="body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#bestMon3" data-toggle="tab">스테디셀러</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="bestMon3">
+                        <br>
+                        <br>
+                        <div id="bookPlusInfo"><br>
+                            <ul class="nav navbar-nav" id="bestseller" style="display: flex;">
+                                <li>
+                                    <p class="topBook">Top 1</p><a href="./bookDetail.html"><img src="../images/book1.jpg" class="imgpo">
+                                    <p class="name">언어의 온도</p>
+                                    <p class="writer">이기주</p>
+                                    <p id="grade">★★★★☆</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 2</p><img src="../images/book2.jpg" class="imgpo">
+                                    <p class="name">자존감 수업</p>
+                                    <p class="writer">윤홍균</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 3</p><img src="../images/book3.jpg" class="imgpo">
+                                    <p class="name">국가란 무엇인가</p>
+                                    <p class="writer">유시민</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 4</p><img src="../images/book4.jpg" class="imgpo">
+                                    <p class="name">공터에서</p>
+                                    <p class="writer">김훈</p>
+                                    <p id="grade">★★★★☆</p>
+                                </li>
+                                <li>
+                                    <p class="topBook">Top 5</p><img src="../images/book5.jpg" class="imgpo">
+                                    <p class="name">기린의 날개</p>
+                                    <p class="writer">히가시노 게이고</p>
+                                    <p id="grade">★★★★★</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><br>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footA">
+                <h2>Logo</h2>
+                <nav class="footD">
+                    <ul>
+                        <li><a href="#"><span class="fab fa-twitter" title="twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-facebook" title="facebook"></span></a></li>
+                        <li><a href="#"><span class="fab fa-google-plus" title="google-plus"></span></a></li>
+                        <li><a href="#"><span class="fab fa-instagram" title="instagram"></span></a></li>
+                        <li><a href="#"><span class="fab fa-youtube" title="youtube"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footC">
+                &copy; LOGGER corp. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body></html>

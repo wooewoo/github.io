@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width" , initial-scale="1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .headA {
+            display: inline-block;
+            margin-bottom: 0;
+            /*            line-height: 70px;*/
+            /*
+            padding-left: 20px;
+            padding-right: 20px;
+*/
+            background-color: #333;
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            width: 100%;
+        }
+
+
+        .menuA ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menuA a {
+
+            padding: 15px;
+            color: inherit;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .menuA a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .searchA {
+            padding-top: 50px;
+            display: flex;
+            justify-content: center;
+            width: 
+        }
+    </style>
+    <!--<style>
+       ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.a {
+  float: right;
+    font-size: 13px;
+    text-align: center;
+}
+
+.a:last-child {
+  border-right: none;
+}
+
+.a a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+        li a:hover {
+  background-color: #111;
+}
+
+    </style>-->
+    <style>
+        body {
+            font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+            margin: 0px;
+            padding: 50px;
+            background: #e1e1e1;
+        }
+            ul .a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+        .a {
+  float: right;
+    font-size: 13px;
+    text-align: center;
+}
+
+        .katagorie {
+            position: relative;
+            height: 44px;
+            background: #2b2f3a;
+            width: auto;
+        }
+
+        .katagorie ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .katagorie>ul {
+            position: relative;
+            display: block;
+            background: #2b2f3a;
+            width: 100%;
+            z-index: 500;
+        }
+
+        .katagorie:after,
+        .katagorie>ul:after {
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+
+        .katagorie.align-right>ul>li {
+            float: right;
+        }
+
+        .katagorie.align-center ul {
+            text-align: center;
+        }
+
+        .katagorie.align-center ul ul {
+            text-align: left;
+        }
+
+        .katagorie>ul>li {
+            display: inline-block;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .katagorie>ul>#katagorie-button {
+            display: none;
+        }
+
+        .katagorie ul li a {
+            display: block;
+            font-family: Helvetica, sans-serif;
+            text-decoration: none;
+        }
+
+        .katagorie>ul>li>a {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 15px 20px;
+            color: #fff;
+            text-transform: uppercase;
+            -webkit-transition: color 0.25s ease-out;
+            -moz-transition: color 0.25s ease-out;
+            -ms-transition: color 0.25s ease-out;
+            -o-transition: color 0.25s ease-out;
+            transition: color 0.25s ease-out;
+        }
+
+        .katagorie>ul>li.sub>a {
+            padding-right: 32px;
+        }
+
+        .katagorie>ul>li:hover>a {
+            color: #ffffff;
+        }
+
+        .katagorie li.sub::after {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .katagorie>ul>li.sub::after {
+            right: 10px;
+            top: 20px;
+            border: 5px solid transparent;
+            border-top-color: #7a8189;
+        }
+
+        .katagorie>ul>li:hover::after {
+            border-top-color: #ffffff;
+        }
+
+        .katagorie ul ul {
+            position: absolute;
+            left: -9999px;
+            top: 70px;
+            opacity: 0;
+            -webkit-transition: opacity .3s ease, top .25s ease;
+            -moz-transition: opacity .3s ease, top .25s ease;
+            -ms-transition: opacity .3s ease, top .25s ease;
+            -o-transition: opacity .3s ease, top .25s ease;
+            transition: opacity .3s ease, top .25s ease;
+            z-index: 1000;
+        }
+
+        .katagorie ul ul ul {
+            top: 37px;
+            padding-left: 5px;
+        }
+
+        .katagorie ul ul li {
+            position: relative;
+        }
+
+        .katagorie>ul>li:hover>ul {
+            left: auto;
+            top: 44px;
+            opacity: 1;
+        }
+
+        .katagorie.align-right>ul>li:hover>ul {
+            left: auto;
+            right: 0;
+            opacity: 1;
+        }
+
+        .katagorie ul ul li:hover>ul {
+            left: 170px;
+            top: 0;
+            opacity: 1;
+        }
+
+        .katagorie.align-right ul ul li:hover>ul {
+            left: auto;
+            right: 170px;
+            top: 0;
+            opacity: 1;
+            padding-right: 5px;
+        }
+
+        .katagorie ul ul li a {
+            width: 130px;
+            border-bottom: 1px solid #eeeeee;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #9ea2a5;
+            background: #ffffff;
+            -webkit-transition: all .35s ease;
+            -moz-transition: all .35s ease;
+            -ms-transition: all .35s ease;
+            -o-transition: all .35s ease;
+            transition: all .35s ease;
+        }
+
+        .katagorie.align-right ul ul li a {
+            text-align: right;
+        }
+
+        .katagorie ul ul li:hover>a {
+            background: #f2f2f2;
+            color: #8c9195;
+        }
+
+        .katagorie ul ul li:last-child>a,
+        .katagorie ul ul li.last>a {
+            border-bottom: 0;
+        }
+
+        .katagorie>ul>li>ul::after {
+            content: '';
+            border: 6px solid transparent;
+            width: 0;
+            height: 0;
+            border-bottom-color: #ffffff;
+            position: absolute;
+            top: -12px;
+            left: 30px;
+        }
+
+        .katagorie.align-right>ul>li>ul::after {
+            left: auto;
+            right: 30px;
+        }
+
+        .katagorie ul ul li.sub::after {
+            border: 4px solid transparent;
+            border-left-color: #9ea2a5;
+            right: 10px;
+            top: 12px;
+            -moz-transition: all .2s ease;
+            -ms-transition: all .2s ease;
+            -o-transition: all .2s ease;
+            transition: all .2s ease;
+            -webkit-transition: -webkit-transform 0.2s ease, right 0.2s ease;
+        }
+
+        .katagorie.align-right ul ul li.sub::after {
+            border-left-color: transparent;
+            border-right-color: #9ea2a5;
+            right: auto;
+            left: 10px;
+        }
+
+        .katagorie ul ul li.sub:hover::after {
+            border-left-color: #ffffff;
+            right: -5px;
+            -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .katagorie.align-right ul ul li.sub:hover::after {
+            border-right-color: #ffffff;
+            border-left-color: transparent;
+            left: -5px;
+            -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+    </style>
+    
+</head>
+
+<body>
+    <header class="container">
+        <div class="headA">
+            <div style="float: left;">
+                <a class="Logo " href="#"><img style="width: 180px; height: 90px;" src="images/logo.jpg" alt=""></a>
+            </div>
+            <div class="menuA" style="float: right">
+                <a href="#">메인</a>
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+            <div class="searchA">
+                <div style="vertical-align: bottom" class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input style="width: 500px; height: 30px " type="search" id="search" placeholder="" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <ul>
+                <div class='katagorie'>
+                    <ul>
+            <li class='active sub'>
+                <a href='#'>카테고리</a>
+                <ul>
+                    <li class='sub'>
+                        <a href='#'>소설</a>
+                        <ul>
+                            <li>
+                                <a href='#'>일반 소설</a>
+                            </li>
+                            <li>
+                                <a href='#'>추리 소설</a>
+                            </li>
+                            
+                            	<li>
+									<a href='#'>SF 소설</a>
+								</li>
+                            	<li>
+									<a href='#'>판타지 소설</a>
+								</li>
+
+                            <li class='last'>
+                                <a href='#'>역사</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='sub'>
+                        <a href='#'>에세이/시</a>
+                        <ul>
+                            <li>
+                                <a href='#'>에세이</a>
+                            </li>
+                            <li class='last'>
+                                <a href='#'>시</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    
+                    
+                             <li class='sub'>
+                        <a href='#'>인문</a>
+                        <ul>
+                            <li>
+                                <a href='#'>정치/사회</a>
+                            </li>
+                            <li>
+                                <a href='#'>예술/문화</a>
+                            </li>
+                            <li class='last'>
+                                <a href='#'>역사</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                             
+                             <li class='sub'>
+                        <a href='#'>경제일반</a>
+                        <ul>
+                            <li>
+                                <a href='#'>경영일반</a>
+                            </li>
+                            <li>
+                                <a href='#'>마케팅</a>
+                            </li>
+                            <li>
+                                <a href='#'>금융/재테크</a>
+                            </li>
+                            <li class='last'>
+                                <a href='#'>리더쉽</a>
+                            </li>
+                        </ul>
+                    </li>
+                             
+                             <li class='sub'>
+                        <a href='#'>자기계발</a>
+                        <ul>
+                            <li>
+                                <a href='#'>외국어</a>
+                            </li>
+                            <li>
+                                <a href='#'>진학/진로</a>
+                            </li>
+                            <li class='last'>
+                                <a href='#'>과학</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    
+                    
+                    
+                             
+                             <li class='sub'>
+                        <a href='#'>It 비지니스</a>
+                        <ul>
+                            <li>
+                                <a href='#'>개발/프로그램</a>
+                            </li>
+                            <li>
+                                <a href='#'>컴퓨터/앱</a>
+                            </li>
+                            <li class='last'>
+                                <a href='#'>수험서</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+                <li class="a"><a href="#">신간</a></li>
+                <li class="a"><a href="#">베스트</a></li>
+                <li class="a"><a href="#">스테디</a></li>
+        </ul>
+               
+                </div>
+                
+            </ul>
+        </div>
+
+
+    </header>
+</body></html>
